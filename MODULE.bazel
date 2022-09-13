@@ -1,0 +1,12 @@
+module(
+    name = "client",
+    version = "1.0",
+)
+
+bazel_dep(name = "greeting", version="1.0", repo_name = "local_greeting")
+
+git_override(
+    module_name = "greeting",
+    remote = "https://github.com/jdob-bazel/py-bzlmod-lib-greeting.git",
+    commit = "f67db03fc395476a0755058739f0371e67988265",
+)
